@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+/**
+ * @author Ahmad Zaky Humami
+ * @filesource DayaController.php
+ */
 class DayaController extends Controller
 {
     /**

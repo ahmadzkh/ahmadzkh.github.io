@@ -1,26 +1,26 @@
 @extends('layouts.sidebar')
 @section('title', 'Dashboard')
 @section('container')
-<link rel="stylesheet" href="{{asset ('/assets/css/page/users/pegawai.css')}}">
+<link rel="stylesheet" href="{{asset ('/assets/css/page/users/users.css')}}">
 <section class="page-section">
     <div class="container">
         <div class="card shadow">
-            <div class="card-header">
-                <div class="row text-center">
-                    <div class="col-sm-1 active">
-                        <a href="{{ url('users') }}" class="usertab text-decoration-none">Users</a>
+            <div class="card-header bg-dark">
+                <div class="row text-center justify-content-around">
+                    <div class="col-sm-2 active">
+                        <a href="{{ url('users') }}" class="usertab text-decoration-none text-white">Users</a>
                     </div>
-                    <div class="col-sm-1">
-                        <a href="{{ url('admin') }}" class="text-decoration-none">Admin</a>
+                    <div class="col-sm-2">
+                        <a href="{{ route('admin.index') }}" class="text-decoration-none text-white">Admin</a>
                     </div>
-                    <div class="col-sm-1">
-                        <a href="{{ url('client') }}" class="text-decoration-none">Client</a>
+                    <div class="col-sm-2">
+                        <a href="{{ route('client.index') }}" class="text-decoration-none text-white">Client</a>
                     </div>
-                    <div class="col-sm-1">
-                        <a href="{{ url('pln') }}" class="text-decoration-none">PLN</a>
+                    <div class="col-sm-2">
+                        <a href="{{ route('pln.index') }}" class="text-decoration-none text-white">PLN</a>
                     </div>
-                    <div class="col-sm-1">
-                        <a href="{{ url('bank') }}" class="text-decoration-none">Bank</a>
+                    <div class="col-sm-2">
+                        <a href="{{ route('bank.index') }}" class="text-decoration-none text-white">Bank</a>
                     </div>
                 </div>
             </div>
@@ -92,6 +92,9 @@
                         @endforeach
                     </tbody>
                 </table>
+            </div>
+            <div class="card-footer bg-dark text-white text-center">
+                <div class="small">Copyright © PyTricity 2020</div>
             </div>
         </div>
     </div>

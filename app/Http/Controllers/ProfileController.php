@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pelanggan;
 
+/**
+ * @author Ahmad Zaky Humami
+ * @filesource ProfileContoller.php
+ */
 class ProfileController extends Controller
 {
     /**

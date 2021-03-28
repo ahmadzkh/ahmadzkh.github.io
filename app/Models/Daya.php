@@ -9,5 +9,5 @@ class Daya extends Model
 {
     use HasFactory;
     protected $table = 'daya_pelanggan';
-    protected $fillable = ['nama_depan', 'nama_belakang', 'golongan', 'id_pln'];
+    protected $fillable = ['nama', 'golongan', 'id_pln'];
 }

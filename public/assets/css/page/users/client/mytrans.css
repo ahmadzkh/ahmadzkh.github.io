@@ -53,3 +53,48 @@ body {
 .sidebar .sidebar-menu ul .mytrans {
     background: var(--blue);
 }
+
+.active{
+    padding: 5px 0px 10px 0px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-bottom: 2px solid var(--success);
+}
+
+.active a{
+    color: var(--success);
+}
+
+.active a:hover{
+    color: var(--success);
+}
+
+.else{
+    padding: 5px 0px 10px 0px;
+    transition: 0.10s;
+    -webkit-transition: 0.10s;
+    -moz-transition: 0.10s;
+    -ms-transition: 0.10s;
+    -o-transition: 0.10s;
+    transition-property: color, border-bottom;
+}
+
+.else:hover{
+    color: var(--blue);
+    border-bottom: 2px solid var(--blue);
+}
+
+.else a{
+    color: var(--dark);
+}
+
+.else a:hover{
+    color: var(--blue);
+}
+
+.row a{
+    padding: 10px 100px;
+}

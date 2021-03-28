@@ -5,22 +5,22 @@
 <section class="page-section">
     <div class="container">
         <div class="card shadow mb-4">
-            <div class="card-header">
-                <div class="row text-center">
-                    <div class="col-sm-1">
-                        <a href="{{ url('users') }}" class="text-decoration-none">Users</a>
+            <div class="card-header bg-dark">
+                <div class="row text-center justify-content-around">
+                    <div class="col-sm-2">
+                        <a href="{{ url('users') }}" class="usertab text-decoration-none text-white">Users</a>
                     </div>
-                    <div class="col-sm-1">
-                        <a href="{{ url('admin') }}" class="text-decoration-none">Admin</a>
+                    <div class="col-sm-2">
+                        <a href="{{ route('admin.index') }}" class="text-decoration-none text-white">Admin</a>
                     </div>
-                    <div class="col-sm-1 active">
-                        <a href="{{ url('client') }}" class="text-decoration-none">Client</a>
+                    <div class="col-sm-2 active">
+                        <a href="{{ route('client.index') }}" class="text-decoration-none text-white">Client</a>
                     </div>
-                    <div class="col-sm-1">
-                        <a href="{{ url('pln') }}" class="text-decoration-none">PLN</a>
+                    <div class="col-sm-2">
+                        <a href="{{ route('pln.index') }}" class="text-decoration-none text-white">PLN</a>
                     </div>
-                    <div class="col-sm-1">
-                        <a href="{{ url('bank') }}" class="text-decoration-none">Bank</a>
+                    <div class="col-sm-2">
+                        <a href="{{ route('bank.index') }}" class="text-decoration-none text-white">Bank</a>
                     </div>
                 </div>
             </div>
@@ -101,7 +101,7 @@
                             <td>{{$client->nama_belakang}}</td>
                             <td>{{$client->no_telp}}</td>
                             <td>{{$client->no_pln}}</td>
-                            <td>{{$client->kelurahan}} {{$client->kecamatan}} {{$client->kota_kab}} {{$client->alamat}}</td>
+                            <td style="width: 300px;">{{$client->kelurahan}}, {{$client->kecamatan}},{{$client->kota_kab}}, {{$client->alamat}}, {{$client->kode_pos}}</td>
                             <td>
                                 <a href="/client/{{ $client->id }}/edit" class="badge badge-success py-2 px-1" data-toggle="tooltip" data-placement="bottom" title="Edit">
                                     <i class="fas fa-edit mx-sm-2"></i>
@@ -114,6 +114,9 @@
                         @endforeach
                     </tbody>
                 </table>
+            </div>
+            <div class="card-footer bg-dark text-white text-center">
+                <div class="small">Copyright © PyTricity 2020</div>
             </div>
         </div>
     </div>
@@ -129,53 +132,72 @@
                 <div class="modal-body">
                     <form action="/client/create" method="POST">
                         {{csrf_field()}}
-                        <div class="row">
-                            <div class="form-group col-sm">
-                                <label for="exampleFormControlInput1">First Name</label>
-                                <input type="text" name="nama_depan" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="Max" autofocus required>
-                            </div>
-                            <div class="form-group col-sm">
-                                <label for="exampleFormControlInput2">Last Name</label>
-                                <input type="text" name="nama_belakang" class="form-control form-control-sm" id="exampleFormControlInput2" placeholder="Alexander" autofocus required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlInput3">Email address</label>
-                            <input type="email" name="email" class="form-control form-control-sm" id="exampleFormControlInput3" placeholder="name@example.com" required autofocus>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlInput6">Phone Number</label>
-                            <input type="text" name="no_telp" class="form-control form-control-sm" id="exampleFormControlInput6" placeholder="XXXX-XXXX-XXXX" required autofocus>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlInput7">ID PLN</label>
-                            <input type="text" name="no_pln" class="form-control form-control-sm" id="exampleFormControlInput7" placeholder="01234567890" required autofocus>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="levels" class="form-control form-control-sm" id="exampleFormControlInput8" value="Pelanggan" hidden>
-                        </div>
-                        <div class="form-group">
-                            <div class="custom-file" hidden>
-                                <input type="file" name="avatar" value="crcLogo.png" class="custom-file-input" id="inputGroupFile01">
-                                <label class="custom-file-label" for="inputGroupFile01" aria-describedby="inputGroupFileAddon01">Choose file</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-sm-6">
-                                <label for="exampleFormControlTextarea1">Address</label>
-                                <textarea class="form-control form-control-sm" id="exampleFormControlTextarea1" name="alamat" rows="3"></textarea>
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label for="golongan">Power Volt</label>
-                                <select name="golongan" id="golongan" class="form-control form-control-sm">
-                                    <option hidden>VA</option>
-                                    <option value="R1/450">R1/450</option>
-                                    <option value="R1/900">R1/900</option>
-                                    <option value="R1/1300">R1/1300</option>
-                                    <option value="R1/2200">R1/2200</option>
-                                </select>
-                            </div>
-                        </div>
+                                <div class="row">
+                                    <div class="form-group col-sm-6">
+                                        <label for="first">First Name</label>
+                                        <input type="text" name="nama_depan" class="form-control form-control-sm" id="first" placeholder="Max" autofocus required>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="last">Last Name</label>
+                                        <input type="text" name="nama_belakang" class="form-control form-control-sm" id="last" placeholder="Alexander" autofocus required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-sm">
+                                        <label for="email">Email address</label>
+                                        <input type="email" name="email" class="form-control form-control-sm" id="email" placeholder="name@example.com" required autofocus>
+                                    </div>
+                                    <div class="form-group col-sm">
+                                        <label for="password">Password</label>
+                                        <input type="password" name="password" class="form-control form-control-sm" id="password" value="123456" hidden>
+                                        <pre>Password default "123456"</pre>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="no_telp">Phone Number</label>
+                                    <input type="text" name="no_telp" class="form-control form-control-sm" id="no_telp" placeholder="XXXX-XXXX-XXXX" required autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <label for="id_pln">ID PLN</label>
+                                    <input type="text" name="no_pln" class="form-control form-control-sm" id="id_pln" placeholder="01234567890" required autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="levels" class="form-control form-control-sm" value="Pelanggan" hidden>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-sm">
+                                        <label for="kel">Kelurahan</label>
+                                        <input type="text" name="kelurahan" class="form-control form-control-sm" id="kel" placeholder="Bintara" autofocus required>
+                                    </div>
+                                    <div class="form-group col-sm">
+                                        <label for="kec">Kecamatan</label>
+                                        <input type="text" name="kecamatan" class="form-control form-control-sm" id="kec" placeholder="Bekasi Barat" required autofocus>
+                                    </div>
+                                    <div class="form-group col-sm">
+                                        <label for="kab">Kabupaten/Kota</label>
+                                        <input type="text" name="kota_kab" class="form-control form-control-sm" id="kab" placeholder="Bekasi" required autofocus>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-sm">
+                                        <label for="alamat">Address</label>
+                                        <textarea name="alamat" class="form-control form-control-sm" id="alamat" placeholder="Jl.Soedirman 3" rows="3" required></textarea>
+                                    </div>
+                                    <div class="form-group col-sm">
+                                        <label for="pos">Kode Pos</label>
+                                        <input type="text" name="kode_pos" class="form-control form-control-sm" id="pos" placeholder="Bekasi">
+                                    </div>
+                                    <div class="form-group col-sm">
+                                        <label for="golongan">Power Volt</label>
+                                        <select name="golongan" id="golongan" class="form-control form-control-sm">
+                                            <option hidden>VA</option>
+                                            <option value="R1/450">R1/450</option>
+                                            <option value="R1/900">R1/900</option>
+                                            <option value="R1/1300">R1/1300</option>
+                                            <option value="R1/2200">R1/2200</option>
+                                        </select>
+                                    </div>
+                                </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

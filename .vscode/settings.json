@@ -1,4 +1,13 @@
 {
     "files.autoSave": "onFocusChange",
-    "glassit.alpha": 255
+    "glassit.alpha": 255,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSaveTimeout": 0,
+    "html.format.endWithNewline": true,
+    "html.format.indentInnerHtml": true,
+    "editor.codeActionsOnSaveTimeout": 0,
+    "files.autoSaveDelay": 0,
+    "standard.autoFixOnSave": true
 }

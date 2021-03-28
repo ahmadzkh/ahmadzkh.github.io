@@ -41,7 +41,7 @@
                         <textarea class="form-control" id="exampleFormControlTextarea1" name="alamat" rows="3">{{$data_pelanggan->alamat}}</textarea>
                     </div>
                     <button type="submit" class="btn btn-success float-right" name="submit" onclick="return confirm('Are you sure is the data correct ?')">Update</button>
-                    <a href=" {{url('/bank')}}" class="btn btn-secondary float-right mr-sm-2" name="submit">Back</a>
+                    <a href=" {{url('/bank')}}" class="btn btn-secondary float-right mr-sm-2">Back</a>
                 </form>
             </div>
         </div>

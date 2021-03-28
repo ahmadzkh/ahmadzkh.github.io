@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 /**
  * @author Ahmad Zaky Humami
- * @filesource LoginController.php
+ * @filesource PlnController.php
  */
 class PlnController extends Controller
 {
@@ -55,7 +55,7 @@ class PlnController extends Controller
         //Menginsert data dari tabel yg sama ke tabel pln dengan foreign key 'user_id' berdasarkan id pada tabel users
         $request->request->add(['user_id' => $user->id]);
         $data_pln = \App\Models\Pln::create($request->all());
-        return redirect('/pln')->with('success', '1 row added successfully');
+        return redirect('/users/pln')->with('success', '1 row added successfully');
     }
 
     /**
@@ -107,7 +107,7 @@ class PlnController extends Controller
         //dengan menggunakan function find() dapat dengan mudah mencari id dari tabel data_pelanggan dan meyimpan semua data table pada variabel
         $data_pln->update($request->all());
         //dan function update dan $request->all() akan mengambil/mengirim semua data baru pada form dan menggantikan data lama
-        return redirect('/pln')->with('success', '1 row was updated');
+        return redirect('/users/pln')->with('success', '1 row was updated');
     }
 
     /**
@@ -121,6 +121,6 @@ class PlnController extends Controller
         $data_pln = \App\Models\Pln::find($id);
         $data_pln->delete();
         //function delete akan otomatis menghapus 1 row yang telah dipilih sesuai dengan id yang dikirim kan melalui href
-        return redirect('/pln')->with('deleted', '1 row was deleted');
+        return redirect('/users/pln')->with('deleted', '1 row was deleted');
     }
 }

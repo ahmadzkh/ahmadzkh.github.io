@@ -1,19 +1,19 @@
 @extends('layouts.sidebar')
 @section('title', 'Dashboard')
 @section('container')
-<link rel="stylesheet" href="{{asset ('/assets/css/page/users/bills.css')}}">
+<link rel="stylesheet" href="{{asset ('/assets/css/page/users/pln/bills-p.css')}}">
 <section class="page-section">
     <div class="container">
         <div class="card shadow">
-            <div class="card-header">
+            <div class="card-header bg-dark">
                 <div class="row">
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                         <form action="{{ route('bill.result')}}" method="get" class="w-100">
                             <div class=" input-group">
                                 <input name="search" type="search" class="form-control" placeholder="Input ID PLN ..." aria-label="Input ID PLN ..." value="" aria-describedby="basic-addon2">
                             </div>
                     </div>
-                    <div class="col-sm-1 p-0 m-0">
+                    <div class="col-sm-2 p-0 m-0">
                         <button class="btn btn-outline-primary" type="submit" name="submit">Search</button>
                         </form>
                     </div>
@@ -27,23 +27,41 @@
                 </div>
             </div>
             <div class="card-body">
-                <div class="row text-center px-sm- align-items-center justify-content-center mb-sm-4">
-                    <div class="col-sm active">
-                        <a href="{{ url('bill-not') }}" class="not text-decoration-none">
+                <div class="row text-center px-sm- align-items-center justify-content-around mb-sm-4">
+                    <div class="col-sm-4 else">
+                        <a href="{{ route('bills.unpaid') }}" class="not text-decoration-none">
                             <p class="p-0 m-0"><i class="fas fa-inbox"></i><br>
-                                Unpaid bills
+                                Unpaid
                             </p>
                         </a>
                     </div>
-                    <div class="col-sm">
-                        <a href="{{ url('bill-yes') }}" class="yes text-decoration-none">
+                    <div class="col-sm-4 active">
+                        <a href="{{ route('bills.paid') }}" class="yes text-decoration-none">
+                            <p class="p-0 m-0">
+                                <i class="fas fa-bell"></i><br>
+                                Paid
+                            </p>
+                        </a>
+                    </div>
+                    <div class="col-sm-4 elses">
+                        <a href="{{ route('bills.confirmed') }}" class="yes text-decoration-none">
                             <p class="p-0 m-0">
                                 <i class="fas fa-check-circle"></i><br>
-                                Bills paid
+                                Confirmed
                             </p>
                         </a>
                     </div>
                 </div>
+                @if (session('success'))
+                <div class="alert alert-success" role="alert">
+                    <div class="alert-body">
+                        <button class="close" data-dismiss="alert">
+                            <a href="" class="text-decoration-none">&times;</a>
+                        </button>
+                    </div>
+                    {{session('success')}}
+                </div>
+                @endif
                 <table class="table table-hover table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead class="thead-light">
                         <tr>
@@ -53,7 +71,7 @@
                             <th scope="col">ID PLN</th>
                             <th scope="col">Group</th>
                             <th scope="col">Address</th>
-                            <th scope="col"><i class="fas fa-inbox"></i></th>
+                            <th scope="col"><i class="fas fa-bell"></i></th>
                             <th scope="col">Tools</th>
                         </tr>
                     </thead>
@@ -75,7 +93,7 @@
                             <td class="w-25 text-justify">
                                 {{$client->kelurahan}}, {{$client->kecamatan}}, {{$client->kota_kab}}, {{$client->alamat}}.
                             </td>
-                            <td>{{$count_bills}}</td>
+                            <td>{{$count_bills_check}}</td>
                             <td>
                                 <a href="/bills/{{ $client->id }}/create" class="badge badge-success py-2 px-1" data-toggle="tooltip" data-placement="bottom" title="Edit">
                                     <i class="fas fa-edit mx-sm-2"></i>
@@ -85,6 +103,9 @@
                         @endforeach
                     </tbody>
                 </table>
+            </div>
+            <div class="card-footer bg-dark text-white text-center">
+                <div class="small">Copyright © PyTricity 2020</div>
             </div>
         </div>
     </div>
@@ -98,38 +119,47 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="/bills/postcreate" method="POST">
+                    <form action="{{ route('bills.post') }}" method="POST">
                         {{csrf_field()}}
-                        <div class="row">
-                            <div class="form-group col-sm">
-                                <label for="exampleFormControlInput1">First Name</label>
-                                <input type="text" name="nama_depan" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="Max" autofocus required>
-                            </div>
-                            <div class="form-group col-sm">
-                                <label for="exampleFormControlInput2">Last Name</label>
-                                <input type="text" name="nama_belakang" class="form-control form-control-sm" id="exampleFormControlInput2" placeholder="Alexander" autofocus required>
-                            </div>
+                        <div class="form-group">
+                            <label for="nama">Client Name</label>
+                            <select name="nama" id="nama" class="form-control form-control-sm">
+                                <option value="" hidden></option>
+                                @foreach ($clients as $client)
+                                <option value="{{$client->nama_depan}} {{$client->nama_belakang}}">{{$client->nama_depan}} {{$client->nama_belakang}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlInput7">ID PLN</label>
-                            <input type="text" name="id_pln" class="form-control form-control-sm" id="exampleFormControlInput7" placeholder="01234567890" required autofocus>
+                            <label for="id_pln">Client PLN ID</label>
+                            <select name="id_pln" id="id_pln" class="form-control form-control-sm">
+                                <option value="" hidden></option>
+                                @foreach ($clients as $client)
+                                <option value="{{$client->no_pln}}">{{$client->no_pln}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlInput6">Phone Number</label>
-                            <input type="text" name="no_telp" class="form-control form-control-sm" id="exampleFormControlInput6" placeholder="XXXX-XXXX-XXXX" required autofocus>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlInput3">Email</label>
-                            <input type="email" name="email" class="form-control form-control-sm" id="exampleFormControlInput3" placeholder="name@example.com" required autofocus>
+                            <label for="no_telp">Client Phone Number</label>
+                            <select name="no_telp" id="no_telp" class="form-control form-control-sm">
+                                <option value="" hidden></option>
+                                @foreach ($clients as $client)
+                                <option value="{{$client->no_telp}}">{{$client->no_telp}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="form-group">
                             <input type="text" name="checked" value="0" hidden>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="id_bill" value="<?= mt_rand(); ?>" hidden>
                         </div>
                         <div class="row">
                             <div class="form-group col-sm">
                                 <label for="golongan">Power Volt</label>
                                 <select name="golongan" id="golongan" class="form-control form-control-sm">
                                     <option hidden>VA</option>
+                                    <option value="{{$client->golongan}}" class="bg-primary text-white">{{$client->golongan}}</option>
                                     <option value="R1/450">R1/450</option>
                                     <option value="R1/900">R1/900</option>
                                     <option value="R1/1300">R1/1300</option>
@@ -140,19 +170,23 @@
                                 <label for="exampleFormControlSelect1">Month</label>
                                 <select name="bulan" class="form-control form-control-sm" id="exampleFormControlSelect1">
                                     <option hidden>None</option>
-                                    <option value="January">January</option>
-                                    <option value="February">February</option>
-                                    <option value="March">March</option>
-                                    <option value="April">April</option>
-                                    <option value="May">May</option>
-                                    <option value="June">June</option>
-                                    <option value="July">July</option>
-                                    <option value="August">August</option>
-                                    <option value="September">September</option>
-                                    <option value="October">October</option>
-                                    <option value="November">November</option>
-                                    <option value="December">December</option>
+                                    <option value="JANUARY">January</option>
+                                    <option value="FEBRUARY">February</option>
+                                    <option value="MARCH">March</option>
+                                    <option value="APRIL">April</option>
+                                    <option value="MAY">May</option>
+                                    <option value="JUNE">June</option>
+                                    <option value="JULY">July</option>
+                                    <option value="AUGUST">August</option>
+                                    <option value="SEPTEMBER">September</option>
+                                    <option value="OCTOBER">October</option>
+                                    <option value="NOVEMBER">November</option>
+                                    <option value="DECEMBER">December</option>
                                 </select>
+                            </div>
+                            <div class="form-group col-sm">
+                                <label for="tahun">Years</label>
+                                <input type="text" name="tahun" id="tahun" class="form-control form-control-sm" placeholder="2000" required autofocus>
                             </div>
                         </div>
                         <div class="row">
@@ -164,6 +198,10 @@
                                 <label for="last">Last Stand Meter</label>
                                 <input type="text" class="form-control form-control-sm" id="last" placeholder="0" name="last_meter" required autofocus>
                             </div>
+                            <div class="form-group col-sm">
+                                <label for="price">Price</label>
+                                <input type="text" class="form-control form-control-sm" id="price" placeholder="0" name="price" required autofocus>
+                            </div>
                         </div>
                 </div>
                 <div class="modal-footer">
@@ -174,6 +212,5 @@
             </div>
         </div>
     </div>
-
 </section>
 @endsection

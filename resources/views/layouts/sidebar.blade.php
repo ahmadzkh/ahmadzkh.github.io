@@ -62,12 +62,14 @@
             </div>
         </div>
         <!--header menu end-->
+
         <!--sidebar start-->
         <div class="sidebar">
             <div class="sidebar-menu">
                 <center class="profile">
                     <img src="{{asset ('/assets/logo/crcLogo.png')}}" alt="">
-                    <p>{{auth()->user()->nama}} | <span>{{auth()->user()->levels}}</span></p>
+                    <p>{{auth()->user()->nama}}</p>
+                    <span>{{auth()->user()->levels}}</span>
                 </center>
                 <ul>
                     <li class="item dashboard">
@@ -98,31 +100,43 @@
                     @endif
                     @if (auth()->user()->levels=="Pelanggan")
                     <li class="item mybill">
-                        <a href="{{url('mybill')}}" class="menu-btn">
+                        <a href="{{ url('mybill') }}" class="menu-btn">
                             <i class="fas fa-file-invoice mr-1"></i>
                             <span>My Bills</span>
                         </a>
                     </li>
                     <li class="item mytrans">
-                        <a href="{{url('mytrans')}}" class="menu-btn">
+                        <a href="{{ url('mytrans') }}" class="menu-btn">
                             <i class="fas fa-file-invoice-dollar"></i>
                             <span>My Transactions</span>
                         </a>
                     </li>
                     @endif
                     @if (auth()->user()->levels=="PLN")
-                    <li class="item bills">
-                        <a href="{{url('bills')}}" class="menu-btn">
+                    <li class="item pybill">
+                        <a href="{{ url('pybill') }}" class="menu-btn">
                             <i class="fas fa-file-invoice"></i>
-                            <span>Bills</span>
+                            <span>Bill Users</span>
+                        </a>
+                    </li>
+                    <li class="item bills">
+                        <a href="{{ route('bills.unpaid') }}" class="menu-btn">
+                            <i class="fas fa-file-contract"></i>
+                            <span>Bills Control</span>
                         </a>
                     </li>
                     @endif
                     @if (auth()->user()->levels=="Bank")
+                    <li class="item pybill">
+                        <a href="{{ url('pybill') }}" class="menu-btn">
+                            <i class="fas fa-file-invoice"></i>
+                            <span>Bill Users</span>
+                        </a>
+                    </li>
                     <li class="item trans">
-                        <a href="{{url('trans')}}" class="menu-btn">
+                        <a href="{{ url('trans') }}" class="menu-btn">
                             <i class="fas fa-file-invoice-dollar"></i>
-                            <span>Bills</span>
+                            <span>Transaction</span>
                         </a>
                     </li>
                     @endif
@@ -130,11 +144,13 @@
             </div>
         </div>
         <!--sidebar end-->
+
         <!--content start-->
         <div class="content">
             @yield('container')
         </div>
         <!--content end-->
+        
     </div>
     <!--wrapper end-->
     <!-- Optional JavaScript; choose one of the two! -->

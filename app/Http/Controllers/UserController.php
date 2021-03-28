@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-
+use Illuminate\Support\Facades\Hash;
+/**
+ * @author Ahmad Zaky Humami
+ * @filesource UserController.php
+ */
 class UserController extends Controller
 {
     /**
@@ -75,7 +79,25 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id)->get;
+        $oldPassword = $request->oldpassword;
+        $checkPassword = $request->checkpassword;
+
+        if (Hash::check($oldPassword, $checkPassword)) {
+            $newpassword = $request->newpassword;
+            $confirmnewpassword = $request->confirmnewpassword;
+            
+            if ($newpassword == $confirmnewpassword) {
+                $user->username = $request->username;
+                $user->password = $request->newpassword; 
+                $user->update($request->all());
+                return view('page.account')->with('success', 'Data was changed'); 
+            } else {
+                return redirect()->back()->with('failed', 'New Password no matched');
+            }
+        } else {
+            return redirect()->back()->with('failed', 'Last Password no matched');
+        }
     }
 
     /**

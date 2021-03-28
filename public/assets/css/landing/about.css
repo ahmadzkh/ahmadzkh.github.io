@@ -51,27 +51,4 @@ body{
     font-family: "Nunito";
 }
 
-section{
-    margin-top: 65px;
-    height: 100vh;
-    background: #ccc;
-    overflow: hidden;
-}
 
-section .row{
-    height: calc(100vh - 50vh);
-    overflow: hidden;
-}
-
-section .coll{
-    width: calc(100% - 50%);
-    height: calc(100vh - 50vh);
-    overflow: hidden;
-}
-
-section img{
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    overflow: hidden;
-}

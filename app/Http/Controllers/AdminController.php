@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 /**
  * @author Ahmad Zaky Humami
- * @filesource LoginController.php
+ * @filesource AdminController.php
  */
 class AdminController extends Controller
 {
@@ -55,7 +55,7 @@ class AdminController extends Controller
         //Menginsert data dari tabel yg sama ke tabel Admin dengan foreign key 'user_id' berdasarkan id pada tabel users
         $request->request->add(['user_id' => $user->id]);
         $data_admin = \App\Models\Admin::create($request->all());
-        return redirect('/admin')->with('success', '1 row added successfully');
+        return redirect('/users/admin')->with('success', '1 row added successfully');
     }
 
     /**
@@ -107,7 +107,7 @@ class AdminController extends Controller
         //dengan menggunakan function find() dapat dengan mudah mencari id dari tabel data_pelanggan dan meyimpan semua data table pada variabel
         $data_admin->update($request->all());
         //dan function update dan $request->all() akan mengambil/mengirim semua data baru pada form dan menggantikan data lama
-        return redirect('/admin')->with('success', '1 row was updated');
+        return redirect('/users/admin')->with('success', '1 row was updated');
     }
 
     /**
@@ -123,6 +123,6 @@ class AdminController extends Controller
         $users = \App\Models\User::find($id);
         $users->delete();
         //function delete akan otomatis menghapus 1 row yang telah dipilih sesuai dengan id yang dikirim kan melalui href
-        return redirect('/admin')->with('deleted', '1 row was deleted');
+        return redirect('users/admin')->with('deleted', '1 row was deleted');
     }
 }

@@ -93,39 +93,39 @@
                                 {{csrf_field()}}
                                 <div class="row">
                                     <div class="form-group col-sm-6">
-                                        <label for="exampleFormControlInput1">First Name</label>
-                                        <input type="text" name="nama_depan" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="Max" autofocus required>
+                                        <label for="first">First Name</label>
+                                        <input type="text" name="nama_depan" class="form-control form-control-sm" id="first" placeholder="Max" autofocus required>
                                     </div>
                                     <div class="form-group col-sm-6">
-                                        <label for="exampleFormControlInput2">Last Name</label>
-                                        <input type="text" name="nama_belakang" class="form-control form-control-sm" id="exampleFormControlInput2" placeholder="Alexander" autofocus required>
+                                        <label for="last">Last Name</label>
+                                        <input type="text" name="nama_belakang" class="form-control form-control-sm" id="last" placeholder="Alexander" autofocus required>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-sm">
-                                        <label for="exampleFormControlInput3">Email address</label>
-                                        <input type="email" name="email" class="form-control form-control-sm" id="exampleFormControlInput3" placeholder="name@example.com" required autofocus>
+                                        <label for="email">Email address</label>
+                                        <input type="email" name="email" class="form-control form-control-sm" id="email" placeholder="name@example.com" required autofocus>
                                     </div>
                                     <div class="form-group col-sm">
-                                        <label for="exampleFormControlInput4">Password</label>
-                                        <input type="password" name="password" class="form-control form-control-sm" id="exampleFormControlInput4" placeholder="will be in bcrypt" required autofocus>
+                                        <label for="password">Password</label>
+                                        <input type="password" name="password" class="form-control form-control-sm" id="password" placeholder="will be in bcrypt" required autofocus>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleFormControlInput6">Phone Number</label>
-                                    <input type="text" name="no_telp" class="form-control form-control-sm" id="exampleFormControlInput6" placeholder="XXXX-XXXX-XXXX" required autofocus>
+                                    <label for="no_telp">Phone Number</label>
+                                    <input type="text" name="no_telp" class="form-control form-control-sm" id="no_telp" placeholder="XXXX-XXXX-XXXX" required autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleFormControlInput7">ID PLN</label>
-                                    <input type="text" name="no_pln" class="form-control form-control-sm" id="exampleFormControlInput7" placeholder="01234567890" required autofocus>
+                                    <label for="id_pln">ID PLN</label>
+                                    <input type="text" name="no_pln" class="form-control form-control-sm" id="id_pln" placeholder="01234567890" required autofocus>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" name="levels" class="form-control form-control-sm" value="Pelanggan" hidden>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-sm-6">
-                                        <label for="exampleFormControlInput8">Kelurahan</label>
-                                        <input type="text" name="kelurahan" class="form-control form-control-sm" id="exampleFormControlInput8" placeholder="Max" autofocus required>
+                                        <label for="kel">Kelurahan</label>
+                                        <input type="text" name="kelurahan" class="form-control form-control-sm" id="kel" placeholder="Max" autofocus required>
                                     </div>
                                     <div class="form-group col-sm">
                                         <label for="kec">Kecamatan</label>

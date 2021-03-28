@@ -14,12 +14,12 @@ class Bill extends Model
         'id_pln',
         'nama',
         'no_telp',
-        'email',
         'golongan',
         'bulan',
         'tahun',
         'first_meter',
         'last_meter',
+        'price',
         'checked'
     ];
 }

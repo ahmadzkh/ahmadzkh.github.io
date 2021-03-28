@@ -87,29 +87,39 @@
                 </div>
             </div>
         </div>
-        @if (auth()->user()->levels=="Pelanggan")
         <div class="row mb-sm-4">
             <div class="col-sm">
                 <div class="card shadow">
                     <div class="card-header bg-dark">
-                        <h5 class="text-white text-center m-0">My Bills</h5>
+                        <h5 class="text-white text-center m-0">Bills</h5>
                     </div>
                     <div class="card-body">
                         <div class="row mb-sm-2">
                             <div class="col-sm">
                                 <div class="card">
-                                    <div class="card-header">
+                                    <div class="card-header text-warning">
                                     <p class="text-center p-0 m-0"><i class="fas fa-inbox"></i><br>
-                                        Unpaid bills
+                                        Unpaid
                                     </p>
                                     </div>
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col-sm-8">
-                                                <p class="pb">{{$count_bill_un}} Bill</p>
+                                                <p class="pb">{{$count_bill_un}} Bills</p>
                                             </div>
                                             <div class="col-sm d-flex justify-content-center align-items-center">
-                                                <a href="{{ url('mybill') }}"><i class="fas fa-file-invoice ib"></i></a>
+                                                @if (auth()->user()->levels=="Pelanggan")
+                                                    <a href="{{ url('mybill') }}"><i class="fas fa-file-invoice ib"></i></a>
+                                                @endif
+                                                @if (auth()->user()->levels=="PLN")
+                                                    <a href="{{ route('bills.unpaid') }}"><i class="fas fa-file-invoice ib"></i></a>
+                                                @endif
+                                                @if (auth()->user()->levels=="Admin")
+                                                    <a href="{{ route('admin.pybill') }}"><i class="fas fa-file-invoice ib"></i></a>
+                                                @endif
+                                                @if (auth()->user()->levels=="Bank")
+                                                    <a href="{{ route('trans') }}"><i class="fas fa-file-invoice ib"></i></a>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -117,19 +127,61 @@
                             </div>
                             <div class="col-sm">
                                 <div class="card">
-                                    <div class="card-header">
+                                    <div class="card-header text-success">
                                         <p class="text-center p-0 m-0">
-                                            <i class="fas fa-check-circle"></i><br>
-                                            Bills paid
+                                            <i class="fas fa-bell"></i><br>
+                                            Paid
                                         </p>
                                     </div>
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col-sm-8">
-                                                <p class="pb">{{$count_bill_check}} Bill</p>
+                                                <p class="pb">{{$count_bill_check}} Bills</p>
                                             </div>
                                             <div class="col-sm d-flex justify-content-center align-items-center">
-                                                <a href="{{ url('mybill-check') }}"><i class="fas fa-file-invoice ib"></i></a>
+                                                @if (auth()->user()->levels=="Pelanggan")
+                                                    <a href="{{ url('mytrans') }}"><i class="fas fa-file-invoice ib"></i></a>
+                                                @endif
+                                                @if (auth()->user()->levels=="PLN")
+                                                    <a href="{{ route('bills.paid') }}"><i class="fas fa-file-invoice ib"></i></a>
+                                                @endif
+                                                @if (auth()->user()->levels=="Admin")
+                                                    <a href="{{ route('admin.pybill') }}"><i class="fas fa-file-invoice ib"></i></a>
+                                                @endif
+                                                @if (auth()->user()->levels=="Bank")
+                                                    <a href="{{ route('trans') }}"><i class="fas fa-file-invoice ib"></i></a>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="card">
+                                    <div class="card-header text-primary">
+                                        <p class="text-center p-0 m-0">
+                                            <i class="fas fa-check-circle"></i><br>
+                                            Confirmed
+                                        </p>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col-sm-8">
+                                                <p class="pb">{{$count_bill_confirm}} Bills</p>
+                                            </div>
+                                            <div class="col-sm d-flex justify-content-center align-items-center">
+                                                @if (auth()->user()->levels=="Pelanggan")
+                                                    <a href="{{ url('mytrans/confirmed') }}"><i class="fas fa-file-invoice ib"></i></a>
+                                                @endif
+                                                @if (auth()->user()->levels=="PLN")
+                                                    <a href="{{ route('bills.confirmed') }}"><i class="fas fa-file-invoice ib"></i></a>
+                                                @endif
+                                                @if (auth()->user()->levels=="Admin")
+                                                    <a href="{{ route('admin.pybill') }}"><i class="fas fa-file-invoice ib"></i></a>
+                                                @endif
+                                                @if (auth()->user()->levels=="Bank")
+                                                    <a href="{{ route('trans') }}"><i class="fas fa-file-invoice ib"></i></a>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -140,7 +192,6 @@
                 </div>
             </div>
         </div>
-        @endif
         @if (auth()->user()->levels=="Admin" || auth()->user()->levels=="PLN" || auth()->user()->levels=="Bank")
         <div class="row mb-sm-4">
             <div class="col-sm">
@@ -232,13 +283,13 @@
                                             <option value="30">30</option>
                                         </select>
                                     </label>
-                                </div>
+                                </div> 
                             </div>
                             <div class="col-sm col-md">
                                 @if (auth()->user()->levels=="PLN")
                                 <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal"
                                     data-target="#staticBackdrop">
-                                    Add User
+                                    Add Group 
                                 </button>
                                 @endif
                             </div>
@@ -385,7 +436,7 @@
                         <iframe class="svg" border="0" marginwidth="0" marginheight="0" src="https://www.mapquest.com/embed/indonesia-282934964?center=-0.7365999999999959,113.48500099999998&zoom=5&maptype=map"></iframe>
                     </div>
                     <div class="card-footer border-dark bg-dark">
-                        <p class="text-center text-white font-weight-bold m-0 p-0">Indonesia</p>
+                        <p class="text-center text-white m-0 p-0 small">Copyright © PyTricity 2020 Indonesia</p>
                     </div>
                 </div>
             </div>

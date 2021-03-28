@@ -57,28 +57,65 @@ div.table-responsive>div.dataTables_wrapper>div.row {
 }
 
 .active{
-    background: #ccc;
-    padding: 10px 0px;
+    padding: 5px 0px 10px 0px;
     border-radius: 2px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     -ms-border-radius: 2px;
     -o-border-radius: 2px;
-    border-right: 1px solid black;
+    border-bottom: 2px solid var(--warning);
 }
 
-.card-body .row .col-sm{
-    padding: 10px 0px;
+.active a{
+    color: var(--warning);
 }
 
-.card-body .row .col-sm:hover {
-    background: var(--secondary);
+.active a:hover{
+    color: var(--warning);
 }
 
-.card .row .col-sm a{
+.else{
+    padding: 5px 0px 10px 0px;
+    transition: 0.10s;
+    -webkit-transition: 0.10s;
+    -moz-transition: 0.10s;
+    -ms-transition: 0.10s;
+    -o-transition: 0.10s;
+    transition-property: color, border-bottom;
+}
+
+.else:hover{
+    color: var(--success);
+    border-bottom: 2px solid var(--success);
+}
+
+.else a{
     color: var(--dark);
 }
 
-.card .row .col-sm a:hover{
-    color: var(--white);
+.else a:hover{
+    color: var(--success);
+}
+
+.elses{
+    padding: 5px 0px 10px 0px;
+    transition: 0.10s;
+    transition-property: color, border-bottom;
+}
+
+.elses:hover{
+    color: var(--blue);
+    border-bottom: 2px solid var(--blue);
+}
+
+.elses a{
+    color: var(--dark);
+}
+
+.elses a:hover{
+    color: var(--blue);
+}
+
+.card-body .row .col-sm-5{
+    padding: 10px 0px;
 }

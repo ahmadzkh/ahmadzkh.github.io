@@ -25,8 +25,12 @@
     --breakpoint-md: 768px;
     --breakpoint-lg: 992px;
     --breakpoint-xl: 1200px;
-    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
 }
 
 *,
@@ -44,14 +48,25 @@ html {
     font-family: "Nunito";
 }
 
-section{
-    width: calc(100% -0%);
-    height: 100vh;
-    display: flex;
+section {
+    overflow: hidden;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    background-image: url(../../img/Banner.png);
-    background-size: cover;
 }
 
+section:nth-child(odd) {
+    background: var(--info);
+}
+
+section .rows {
+    height: calc(100vh - 60vh);
+    overflow: hidden;
+}
+
+.service {
+    color: var(--orange);
+}
+
+#author {
+    padding-top: 100px;
+}

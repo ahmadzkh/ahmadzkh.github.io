@@ -47,6 +47,12 @@ class LoginController extends Controller
         $data_pelanggan->kecamatan = 'Kec.' . $request->kecamatan;
         $data_pelanggan->kode_pos = $request->kode_pos;
         $data_pelanggan->golongan = $request->golongan;
+
+        $daya_pelanggan = new \App\Models\Daya;
+        $daya_pelanggan->id_pln = $request->no_pln;
+        $daya_pelanggan->nama = $request->nama_depan . ' ' . $request->nama_belakang;
+        $daya_pelanggan->golongan = $request->golongan;
+        $daya_pelanggan->save();
         
         //Menginsert data dari form yg sama dengan foreign key 'user_id' dan id_pln berdasarkan id pada tabel users
         $request->request->add(['user_id' => $user->id]);

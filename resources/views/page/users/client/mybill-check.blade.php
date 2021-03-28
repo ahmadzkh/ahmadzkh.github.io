@@ -5,141 +5,54 @@
 <section class="page-section">
     <div class="container">
         <div class="card shadow">
-            <div class="card-header">
-                <div class="row">
-                    <div class="col-sm">
-                        <form action="" method="get" class="w-100">
-                            <div class=" input-group">
-                                <input name="search" type="search" class="form-control" placeholder="Input ID PLN ..." aria-label="Input ID PLN ..." value="" aria-describedby="basic-addon2">
-                            </div>
-                        </form>
-                    </div>
-                </div>
+            <div class="card-header bg-dark">
+                <h5 class="text-white text-center m-0">My Bills</h5>
             </div>
             <div class="card-body">
-                <div class="row mb-sm-4">
+                @if ($count_bill_un=='0')
+                <div class="container justify-content-center align-items-center text-center">
+                <p><i class="fas fa-sad-tear"></i> {{$count_bill_un}} Bill | 404 NOT FOUND</p>
+                </div>
+                @endif
+                @if ($count_bill_un!='1')
+                @foreach ( $bill_un as $un )
+                <div class="row mb-sm-3">
                     <div class="col-sm">
-                        <div class="card">
+                        <div class="card shadow">
+                            <div class="card-header bg-warning">
+                                <h6 class="text-white text-center m-0"><i class="fas fa-inbox"></i> Unpaid</h6>
+                            </div>
                             <div class="card-body">
-                                <div class="row">
-                                    <div class="col-sm">
-                                        <pre class="pbill px-5">ID PLN      : {{$bill->id_pln}}</pre>
-                                        <pre class="pbill px-5">Name        : {{$bill->nama}}</pre>
-                                        <pre class="pbill px-5">Group       : {{$bill->golongan}}</pre>
-                                        <pre class="pbill px-5">Price Bill  : <?php  ?></pre>
+                                <div class="row mb-sm-3 justify-content-center">
+                                    <div class="col-sm-5">
+                                        <pre>ID PLN    :    {{$un->id_pln}}</pre>
+                                        <pre>Name      :    {{$un->nama}}</pre>
+                                        <pre>Group     :    {{$un->golongan}}</pre>
+                                        <pre>Price     :    Rp <?= number_format($un->price,2,',','.'); ?></pre>
                                     </div>
-                                    <div class="col-sm">
-                                        <pre class="pbill px-5">ID Bill      : {{$bill->id_bill}}</pre>
-                                        <pre class="pbill px-5">Month/Year   : APRIL21</pre>
-                                        <pre class="pbill px-5">Stand Meter  : {{$bill->first_meter}} - {{$bill->last_meter}}</pre>
+                                    <div class="col-sm-5">
+                                        <pre>ID Bill        :   {{$un->id_bill}}</pre>
+                                        <pre>Date           :   <?php $dateNow = date("d-m-Y h:i:s a", time()); echo $dateNow; ?></pre>
+                                        <pre>Month/Years    :   {{$un->bulan}}/{{$un->tahun}}</pre>
+                                        <pre>Stand Meter    :   <?= str_pad($un->first_meter, 8, '0', STR_PAD_LEFT); ?> - <?= str_pad($un->last_meter, 8, '0', STR_PAD_LEFT); ?></pre>
                                     </div>
                                 </div>
-                                <p class="text-center pt-3">Electricity Bill</p>
-                                <pre class="pbill px-5">Admin Fee   : Rp 2.500,00</pre>
-                                <pre class="pbill px-5">Total Price : <?php  ?></pre>
-                                <form action="/bill/{{ $bill->id }}/update" method="post">
-                                    <input type="text" name="checked" value="1" hidden>
-                                    <button type="submit" class="btn btn-warning text-white mt-3 float-right" name="submit">
-                                        <i class="fas fa-dollar-sign"></i> Pay Now
-                                    </button>
-                                </form>
-                                
-                            </div>
-                            <div class="card-footer">
-                                <div class="small text-center">Copyright © PyTricity 2020</div>
+                                <div class="row justify-content-end">
+                                    <div class="col-sm-6">
+                                        <a href="/mybill/{{$un->id}}/pay" class="btn btn-outline-success w-100"><i class="fas   fa-dollar-sign"></i> Checkout</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                @endforeach
+                @endif
+            </div>
+            <div class="card-footer bg-dark text-white text-center">
+                <div class="small">Copyright © PyTricity 2020</div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Create New Bill</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="/bills/postcreate" method="POST">
-                        {{csrf_field()}}
-                        <div class="row">
-                            <div class="form-group col-sm">
-                                <label for="exampleFormControlInput1">First Name</label>
-                                <input type="text" name="nama_depan" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="Max" autofocus required>
-                            </div>
-                            <div class="form-group col-sm">
-                                <label for="exampleFormControlInput2">Last Name</label>
-                                <input type="text" name="nama_belakang" class="form-control form-control-sm" id="exampleFormControlInput2" placeholder="Alexander" autofocus required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlInput7">ID PLN</label>
-                            <input type="text" name="id_pln" class="form-control form-control-sm" id="exampleFormControlInput7" placeholder="01234567890" required autofocus>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlInput6">Phone Number</label>
-                            <input type="text" name="no_telp" class="form-control form-control-sm" id="exampleFormControlInput6" placeholder="XXXX-XXXX-XXXX" required autofocus>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlInput3">Email</label>
-                            <input type="email" name="email" class="form-control form-control-sm" id="exampleFormControlInput3" placeholder="name@example.com" required autofocus>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="checked" value="0" hidden>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-sm">
-                                <label for="golongan">Power Volt</label>
-                                <select name="golongan" id="golongan" class="form-control form-control-sm">
-                                    <option hidden>VA</option>
-                                    <option value="R1/450">R1/450</option>
-                                    <option value="R1/900">R1/900</option>
-                                    <option value="R1/1300">R1/1300</option>
-                                    <option value="R1/2200">R1/2200</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-sm">
-                                <label for="exampleFormControlSelect1">Month</label>
-                                <select name="bulan" class="form-control form-control-sm" id="exampleFormControlSelect1">
-                                    <option hidden>None</option>
-                                    <option value="January">January</option>
-                                    <option value="February">February</option>
-                                    <option value="March">March</option>
-                                    <option value="April">April</option>
-                                    <option value="May">May</option>
-                                    <option value="June">June</option>
-                                    <option value="July">July</option>
-                                    <option value="August">August</option>
-                                    <option value="September">September</option>
-                                    <option value="October">October</option>
-                                    <option value="November">November</option>
-                                    <option value="December">December</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-sm">
-                                <label for="first">First Stand Meter</label>
-                                <input type="text" class="form-control form-control-sm" id="first" placeholder="0" name="first_meter" required autofocus>
-                            </div>
-                            <div class="form-group col-sm">
-                                <label for="last">Last Stand Meter</label>
-                                <input type="text" class="form-control form-control-sm" id="last" placeholder="0" name="last_meter" required autofocus>
-                            </div>
-                        </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
 </section>
 @endsection
