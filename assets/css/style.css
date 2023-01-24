@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Poppins&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+}
+
+section:nth-child(even) {
+    background-color: #0066b9;
+}
+
+.satu .border-top-left {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50%;
+    height: 25%;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+}
+
+.satu .border-bottom-right {
+    position: absolute;
+    top: calc(100vh - 26.8%);
+    left: calc(100% - 51%);
+    width: 50%;
+    height: 25%;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+}
+
+.satu .square-top-left {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+}
+
+.satu .square-bottom-right {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: calc(100vh - 9.3%);
+    left: calc(100% - 5.2%);
+    background-color: white;
+}
+
+.satu img {
+    position: absolute;
+    top: 18vh;
+    left: 250px;
+    filter: brightness(0.7);
+    -webkit-filter: brightness(0.7);
+}
+
+.satu .text {
+    position: absolute;
+    top: 40vh;
+    left: 650px;
+    color: whitesmoke;
+    width: 1000px;
+}
+
+.satu .text h1 {
+    font-size: 40pt;
+}
+
+.satu .text hr {
+    border: 2px solid white;
+}
+
+.satu .text p {
+    font-size: 16pt;
+}
+
+.dua {
+    position: relative;
+    overflow: hidden;
+}
+
+.dua .project {
+    margin-top: 50px;
+    /* left: 45%; */
+    /* margin: 0 auto; */
+}
+
+.dua .border-top-left {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50%;
+    height: 25%;
+    border-top: 2px solid #0066b9;
+    border-left: 2px solid #0066b9;
+}
+
+.dua .border-bottom-right {
+    position: absolute;
+    top: calc(100% - 26.8%);
+    left: calc(100% - 51%);
+    width: 50%;
+    height: 25%;
+    border-bottom: 2px solid #0066b9;
+    border-right: 2px solid #0066b9;
+}
+
+.dua .square-top-left {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #0066b9;
+}
+
+.dua .square-bottom-right {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: calc(100% - 9.3%);
+    left: calc(100% - 5.2%);
+    background-color: #0066b9;
+}
+
+.dua .smp {
+    position: absolute;
+    top: 35px;
+    left: 95px;
+    width: 100px;
+    height: 100px;
+}
+
+.dua .smk {
+    position: absolute;
+    top: 35px;
+    left: 95px;
+    width: 100px;
+    height: 100px;
+}
+
+.dua .gundar {
+    position: absolute;
+    top: 35px;
+    left: 95px;
+    width: 100px;
+    height: 100px;
+}
+
+.tiga {
+    position: relative;
+    overflow: hidden;
+}
+
+.tiga .project {
+    margin-top: 50px;
+    /* left: 45%; */
+    /* margin: 0 auto; */
+}
+
+.tiga .border-top-left {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50%;
+    height: 25%;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+}
+
+.tiga .border-bottom-right {
+    position: absolute;
+    top: calc(100% - 26.8%);
+    left: calc(100% - 51%);
+    width: 50%;
+    height: 25%;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+}
+
+.tiga .square-top-left {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+}
+
+.tiga .square-bottom-right {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: calc(100% - 9.3%);
+    left: calc(100% - 5.2%);
+    background-color: white;
+}
+
+.tiga .pytricity {
+    position: absolute;
+    top: 35px;
+    left: 105px;
+    width: 100px;
+    height: 100px;
+}
+
+.tiga .inven {
+    position: absolute;
+    top: 35px;
+    left: 105px;
+    width: 100px;
+    height: 100px;
+}
+
+.tiga .bkk {
+    position: absolute;
+    top: 35px;
+    left: 85px;
+    height: 100px;
+}
+
+.empat {
+    position: relative;
+    overflow: hidden;
+}
+
+.empat .project {
+    margin-top: 50px;
+    /* left: 45%; */
+    /* margin: 0 auto; */
+}
+
+.empat .border-top-left {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50%;
+    height: 25%;
+    border-top: 2px solid #0066b9;
+    border-left: 2px solid #0066b9;
+}
+
+.empat .border-bottom-right {
+    position: absolute;
+    top: calc(100% - 26.8%);
+    left: calc(100% - 51%);
+    width: 50%;
+    height: 25%;
+    border-bottom: 2px solid #0066b9;
+    border-right: 2px solid #0066b9;
+}
+
+.empat .square-top-left {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #0066b9;
+}
+
+.empat .square-bottom-right {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: calc(100% - 9.3%);
+    left: calc(100% - 5.2%);
+    background-color: #0066b9;
+}
