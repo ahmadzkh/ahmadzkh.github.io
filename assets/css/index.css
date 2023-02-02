@@ -1,0 +1,44 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+section {
+    width: 100%;
+    min-height: fit-content;
+}
+
+
+.satu .container img {
+    position: absolute;
+    top: 18vh;
+    left: 250px;
+    filter: brightness(0.9);
+    -webkit-filter: brightness(0.9);
+}
+
+.satu .container .text {
+    position: absolute;
+    top: 40vh;
+    left: 800px;
+    color: white;
+    width: 1000px;
+}
+
+.satu .container .text h1 {
+    font-size: 40pt;
+}
+
+.satu .container .text hr {
+    border: 2px solid white;
+}
+
+.satu .container .text p {
+    font-size: 16pt;
+}
+
