@@ -1,184 +1,874 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    
-    <link rel="stylesheet" href="assets/fonts/icomoon/style.css">
-    
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    
     <script src="https://kit.fontawesome.com/9df4541ca6.js" crossorigin="anonymous"></script>
 
+    <!-- FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 
     <!-- Style -->
-    <link rel="stylesheet" href="assets/css/sidebar.css">
-    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <title>Ahmad Zaky Humami</title>
-</head>
-<body class="bg-dark">
-    <!-- Sidebar Start -->
-    <aside class="sidebar bg-primary py-0">
-        <div class="toggle bg-black rounded-3">
-            <a href="#" class="js-menu-toggle menu-toggle text-primary">
-                <i class="fas fa-bars fa-stack-2x"></i>
-            </a>
-        </div>
-        <div class="side-inner px-lg-5">
-            <p></p>
-            <table class="table">
-                <tr>
-                    <td class="py-sm-3">
-                        <a href="index.html" class="text-decoration-none text-white">Profile</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="py-sm-3">
-                        <a href="about.html" class="text-decoration-none text-white">About</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="py-sm-3">
-                        <a href="project.html" class="text-decoration-none text-white">Project</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="py-sm-3">
-                        <a href="certificate.html" class="text-decoration-none text-white">Certificate</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="py-sm-3">
-                        <a href="cv.html" class="text-decoration-none text-white">Curriculum Vitae</a>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </aside>
-    <!-- Sidebar End -->
 
+</head>
+
+<body class="bg-dark">
     <main>
         <!-- Navbar Start -->
-        <nav class="navbar bg-dark shadow" data-bs-theme="dark">
-            <div class="container-fluid py-lg-1 py-sm-2 ps-lg-4">
-                <a class="navbar-brand" href="index.html">
-                    <p class="h3 p-0 m-0">Portfolio</p>
+        <nav class="navbar navbar-expand-lg text-white fixed-top glass-nav">
+            <div class="container-fluid ms-5">
+                <a class="navbar-brand text-white" href="/">
+                    <h4 class="p-0 m-0">Portfolio</h4>
                 </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto gap-4">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" aria-current="page" href="#intro">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#about">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#projects">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#skills">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#certif">Certificate</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#resume">Resume</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
         <!-- Navbar End -->
-        
-        <!-- Content Start -->
-        <section class="satu" id="intro">
-            <div class="container" style="height: 90vh;">
-                <div class="row justify-content-around">
-                    <div class="col-md-9 d-flex justify-content-center align-items-center">
-                        <img src="/assets/image/imagesatu.jpg" class=" rounded-2"
-                        draggable="false"
-                        data-aos="fade-right" 
-                        data-aos-offset="0"
-                        data-aos-delay="100"
-                        data-aos-duration="1000"
-                        data-aos-easing="ease-in-out"
-                        data-aos-mirror="true"
-                        data-aos-once="false" 
-                        alt="" height="650px"> 
+
+        <!-- Content End -->
+        <div class="container-fluid">
+            <!-- Content Intro Start -->
+            <div class="section d-flex justify-content-center align-items-center" id="intro">
+                <div class="row gap-5 justify-content-between align-items-center">
+                    <div class="col-md">
+                        <img src="/assets/image/imagesatu.jpg" class="glass rounded-circle" draggable="false"
+                            data-aos="fade-right" data-aos-offset="0" data-aos-delay="100" data-aos-duration="1000"
+                            data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" alt=""
+                            height="350px">
+                    </div>
+                    <div class="col-md">
                         <div class="text">
-                            <h1 
-                            data-aos="fade-down" 
-                            data-aos-offset="0"
-                            data-aos-delay="100"
-                            data-aos-duration="1000"
-                            data-aos-easing="ease-in-out"
-                            data-aos-mirror="true"
-                            data-aos-once="false"
-                            >
+                            <h1 data-aos="fade-down" data-aos-offset="0" data-aos-delay="100" data-aos-duration="1000"
+                                data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
                                 Ahmad Zaky Humami
                             </h1>
-                            <hr class="w-75"
-                            data-aos="fade-left"
-                            data-aos-offset="0"
-                            data-aos-delay="100"
-                            data-aos-duration="1000"
-                            data-aos-easing="ease-in-out"
-                            data-aos-mirror="true"
-                            data-aos-once="false"
-                            >
-                            <p
-                            data-aos="fade" 
-                            data-aos-offset="0"
-                            data-aos-delay="500"
-                            data-aos-duration="1000"
-                            data-aos-easing="ease-in-out"
-                            data-aos-mirror="true"
-                            data-aos-once="false"
-                            >
-                                saya adalah <span class="text-primary">Junior Web Developer</span>
+                            <hr class="w-100" data-aos="fade-left" data-aos-offset="0" data-aos-delay="100"
+                                data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true"
+                                data-aos-once="false">
+                            <p data-aos="fade" data-aos-offset="0" data-aos-delay="500" data-aos-duration="1000"
+                                data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+                                <span class="text-primary">Web Developer</span>
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>            
+            <!-- Content Intro End -->
+
+            <!-- Content About Start -->
+            <div class="section row justify-content-around align-items-center" id="about">
+                <div class="col-md-6" data-aos="fade-right" data-aos-offset="100" data-aos-delay="300"
+                    data-aos-duration="1500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+                    <h1 class="text-center text-white">Profile</h1>
+                    <hr>
+                    <h1 class="h3 fw-bold text-primary me-2">AHMAD ZAKY HUMAMI</h1>
+                    <div class="text pt-3">
+                        <div class="row g-0 justify-content-between">
+                            <div class="personal mb-4 col-md-6">
+                                <p>
+                                    <i class="fa-solid fa-house me-2"></i>Jakarta, 08-07-2004
+                                </p>
+                                <p>
+                                    <i class="fa-solid fa-user me-2"></i>Laki - Laki
+                                </p>
+                                <p>
+                                    <i class="fa-solid fa-star-and-crescent me-2"></i>Islam
+                                </p>
+                                <p colspan="2">
+                                    <i class="fas fa-map-marker-alt me-2"></i>
+                                    Kel. Setia Asih, Kec. Tarumajaya, Kab. Bekasi, Bekasi Utara, Jawa Barat, Indonesia
+                                </p>
+                            </div>
+                            <div class="contacts mb-4 col-md-4">
+                                <p>
+                                    <i class="fa-solid fa-envelope me-2"></i>humami539@gmail.com
+                                </p>
+                                <p>
+                                    <i class="fa-brands fa-whatsapp me-2"></i>+62 851-5620-0870
+                                </p>
+                                <p>
+                                    <i class="fa-brands fa-linkedin me-2"></i>
+                                    <a href="https://www.linkedin.com/in/ahmadzkh/" target="_blank"
+                                        class="text-decoration-none">Ahmad Zaky</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="education mb-4">
+                            <p class="h4 fw-bold">PENDIDIKAN</p>
+                            <ul class="list-unstyled ms-4">
+                                <li class="mb-3 row align-items-center">
+                                    <img src="/assets/image/logo_gundar.png" alt="logo_gundar" class="col-md-1"
+                                        style="width: 76px;">
+                                    <p class="col-md-9 m-0">
+                                        <span class="text-primary fw-bold">S1 Teknik Informatika</span><br>
+                                        Universitas Gunadarma |<span class="fst-italic text-white-50">
+                                            Sep 2022 -
+                                            Sekarang
+                                        </span>
+                                    </p>
+                                </li>
+                                <li class="mb-3 row align-items-center">
+                                    <img src="/assets/image/smkn1.png" alt="logo_smkn1kotabekasi" class="col-md-1"
+                                        style="width: 76px;">
+                                    <p class="col-md-9 m-0">
+                                        <span class="text-primary fw-bold">Rekayasa Perangkat Lunak</span><br>
+                                        SMK Negeri 1 Kota Bekasi | <span class="fst-italic text-white-50">Jul 2019 - May
+                                            2022</span>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pengalaman mb-3">
+                            <p class="h4 fw-bold">PENGALAMAN ORGANISASI</p>
+                            <ul class="list-unstyled ms-4">
+                                <li class="mb-3">
+                                    <p class="m-0">
+                                        <span class="text-primary fw-bold">INORI JAPAN CLUB</span><br>
+                                        SMK Negeri 1 Kota Bekasi | <span class="fst-italic text-white-50">Jul 2019 -
+                                            May 2022</span>
+                                    </p>
+                                </li>
+                                <li class="mb-3">
+                                    <p class="m-0">
+                                        <span class="text-primary fw-bold">Organisasi Siswa Intra Sekolah</span><br>
+                                        SMPIT ASSU'ADAA | <span class="fst-italic text-white-50">Sep 2016 -
+                                            May 2018</span>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="col-md-4" data-aos="fade-left" data-aos-offset="100" data-aos-delay="300"
+                    data-aos-duration="1500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+                    <blockquote class="instagram-media"
+                        data-instgrm-permalink="https://www.instagram.com/p/Cle4jzHSRGv/?utm_source=ig_embed&amp;utm_campaign=loading"
+                        data-instgrm-version="14"
+                        style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+                        <div style="padding:16px;"> <a
+                                href="https://www.instagram.com/p/Cle4jzHSRGv/?utm_source=ig_embed&amp;utm_campaign=loading"
+                                style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;"
+                                target="_blank">
+                                <div style=" display: flex; flex-direction: row; align-items: center;">
+                                    <div
+                                        style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;">
+                                    </div>
+                                    <div
+                                        style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                                        <div
+                                            style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;">
+                                        </div>
+                                        <div
+                                            style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 19% 0;"></div>
+                                <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg
+                                        width="50px" height="50px" viewBox="0 0 60 60" version="1.1"
+                                        xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g transform="translate(-511.000000, -20.000000)" fill="#000000">
+                                                <g>
+                                                    <path
+                                                        d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg></div>
+                                <div style="padding-top: 8px;">
+                                    <div
+                                        style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">
+                                        View this post on Instagram</div>
+                                </div>
+                                <div style="padding: 12.5% 0;"></div>
+                                <div
+                                    style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;">
+                                    <div>
+                                        <div
+                                            style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);">
+                                        </div>
+                                        <div
+                                            style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;">
+                                        </div>
+                                        <div
+                                            style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);">
+                                        </div>
+                                    </div>
+                                    <div style="margin-left: 8px;">
+                                        <div
+                                            style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;">
+                                        </div>
+                                        <div
+                                            style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)">
+                                        </div>
+                                    </div>
+                                    <div style="margin-left: auto;">
+                                        <div
+                                            style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);">
+                                        </div>
+                                        <div
+                                            style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);">
+                                        </div>
+                                        <div
+                                            style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;">
+                                    <div
+                                        style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;">
+                                    </div>
+                                    <div
+                                        style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;">
+                                    </div>
+                                </div>
+                            </a>
+                            <p
+                                style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
+                                <a href="https://www.instagram.com/p/Cle4jzHSRGv/?utm_source=ig_embed&amp;utm_campaign=loading"
+                                    style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;"
+                                    target="_blank">A post shared by Ahmad Zaky (@ahmadzkh_)</a>
+                            </p>
+                        </div>
+                    </blockquote>
+                    <script async src="//www.instagram.com/embed.js"></script>
+                </div>
+            </div>
+            <!-- Content About End -->
+
+            <!-- Content Projects Start -->
+            <div class="tiga row justify-content-center align-items-center gap-5" id="projects">
+                <div class="title text-center" data-aos="fade" data-aos-offset="0" data-aos-delay="1000"
+                    data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+                    <h1>Projects</h1>
+                </div>
+                <div class="card bg-dark p-0 m-0 g-0" style="width: 500px;" data-aos="fade-down" data-aos-offset="0"
+                    data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true"
+                    data-aos-once="false">
+                    <div class="card-header">
+                        <p class="card-title p-0 g-0 m-0">
+                            Project Name : Pytricity
+                        </p>
+                    </div>
+                    <img src="/assets/image/landpage_pytricity.png" class="card-img-top" alt="pytricity_project">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Pembayaran Listrik Pasca Bayar (PPOB) Web Application
+                        </p>
+                        <p class="card-subtitle">
+                            Fullstack Developer | <span class="text-muted fst-italic">Oct 2020 - Feb 2021</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="card bg-dark p-0 m-0 g-0" style="width: 500px;" data-aos="fade-down" data-aos-offset="0"
+                    data-aos-delay="300" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true"
+                    data-aos-once="false">
+                    <div class="card-header">
+                        <p class="card-title p-0 g-0 m-0">
+                            Project Name : Inven
+                        </p>
+                    </div>
+                    <img src="/assets/image/dashboard_inven.png" class="card-img-top" alt="pytricity_project">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Inventory Web Application
+                        </p>
+                        <p class="card-subtitle">
+                            Fullstack Developer | <span class="text-muted fst-italic">Apr 2021 - Jun 2021</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="card bg-dark p-0 m-0 g-0" style="width: 500px;" data-aos="fade-down" data-aos-offset="0"
+                    data-aos-delay="400" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true"
+                    data-aos-once="false">
+                    <div class="card-header">
+                        <p class="card-title p-0 g-0 m-0">
+                            Project Name : BKK SMK Negeri 1 Kota Bekasi
+                        </p>
+                    </div>
+                    <img src="/assets/image/landpage_bkk.png" class="card-img-top" alt="pytricity_project">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Bursa Kerja Kursus Web Application
+                        </p>
+                        <p class="card-subtitle">
+                            Back-End Developer in Team | <span class="text-muted fst-italic">Aug 2021 - Feb 2022</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="card bg-dark p-0 m-0 g-0" style="width: 500px;" data-aos="fade-down" data-aos-offset="0"
+                    data-aos-delay="500" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true"
+                    data-aos-once="false">
+                    <div class="card-header">
+                        <p class="card-title p-0 g-0 m-0">
+                            Project Name : InstagramClone
+                        </p>
+                    </div>
+                    <img src="/assets/image/profile_instagramclone.png" class="card-img-top" alt="pytricity_project">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Alternatif Instagram Web Application
+                        </p>
+                        <p class="card-subtitle">
+                            Fullstack Developer in Team | <span class="text-muted fst-italic">Oct 2023 - Nov 2023</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="card bg-dark p-0 m-0 g-0" style="width: 500px;" data-aos="fade-down" data-aos-offset="0"
+                    data-aos-delay="600" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true"
+                    data-aos-once="false">
+                    <div class="card-header">
+                        <p class="card-title p-0 g-0 m-0">
+                            Project Name : Rekam Medis Hospital
+                        </p>
+                    </div>
+                    <img src="/assets/image/rekammedis_app.png" class="card-img-top" alt="pytricity_project">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Pengelola Rekam Medis Web Application
+                        </p>
+                        <p class="card-subtitle">
+                            Back-End Developer in Team | <span class="text-muted fst-italic">Aug 2021 - Feb 2022</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Content Projects End -->
+
+            <!-- Content Skills Start -->
+            <div class="section row justify-content-center align-items-center gap-5" id="skills">
+                <div class="title text-center" data-aos="fade" data-aos-offset="0" data-aos-delay="1000"
+                    data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+                    <h1>Skills</h1>
+                </div>
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-md-5">
+                        <div class="web row mb-3 justify-content-between align-items-center" data-aos="fade-right"
+                            data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000"
+                            data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+                            <div class="col-md-6">
+                                <h1 class="h5 py-2 m-0 g-0">
+                                    Web Development: HTML, CSS, Javascript
+                                </h1>
+                            </div>
+                            <div class="eff col-md-5">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-label="web" style="width: 98%"
+                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="database row mb-3 justify-content-between align-items-center" data-aos="fade-right"
+                            data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000"
+                            data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+                            <div class="col-md">
+                                <h1 class="h5 py-2 m-0 g-0">
+                                    Database Management: SQL, MongoDB, Oracle
+                                </h1>
+                            </div>
+                            <div class="eff col-md-5">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-label="database"
+                                        style="width: 95%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="program row mb-3 justify-content-center align-items-center" data-aos="fade-right"
+                            data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000"
+                            data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+                            <div class="col-md">
+                                <h1 class="h5 py-2 m-0 g-0">
+                                    Programming Language: Java , Python, C++
+                                </h1>
+                            </div>
+                            <div class="eff col-md-5">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-label="program" style="width: 85%"
+                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="git row mb-3 justify-content-center align-items-center" data-aos="fade-right"
+                            data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000"
+                            data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+                            <div class="col-md">
+                                <h1 class="h5 py-2 m-0 g-0">
+                                    Version Control (e.g., Git)
+                                </h1>
+                            </div>
+                            <div class="eff col-md-5">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-label="git" style="width: 75%"
+                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="text-center mb-3" data-aos="fade-right" data-aos-offset="0" data-aos-delay="200"
+                            data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true"
+                            data-aos-once="false">
+                            <h1 class="h5 py-2 m-0 g-0">Other Skills</h1>
+                        </div>
+                        <div class="photoshop row mb-3 justify-content-center align-items-center" data-aos="fade-right"
+                            data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000"
+                            data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+                            <div class="col-md">
+                                <h1 class="h5 py-2 m-0 g-0">
+                                    Adobe Photoshop
+                                </h1>
+                            </div>
+                            <div class="eff col-md-5">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-label="photoshop"
+                                        style="width: 73%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="illustrator row mb-3 justify-content-center align-items-center"
+                            data-aos="fade-right" data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000"
+                            data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+                            <div class="col-md">
+                                <h1 class="h5 py-2 m-0 g-0">
+                                    Adobe Illustrator
+                                </h1>
+                            </div>
+                            <div class="eff col-md-5">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-label="illustrator"
+                                        style="width: 70%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="premierpro row mb-3 justify-content-center align-items-center" data-aos="fade-right"
+                            data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000"
+                            data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+                            <div class="col-md">
+                                <h1 class="h5 py-2 m-0 g-0">
+                                    Adobe Premier Pro
+                                </h1>
+                            </div>
+                            <div class="eff col-md-5">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-label="premierpro"
+                                        style="width: 75%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="title text-center" data-aos="fade" data-aos-offset="0" data-aos-delay="1000"
+                    data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+                    <h1>Communications</h1>
+                </div>
+                <div class="row my-5 justify-content-between align-items-center">
+                    <div class="indonesia col-md-5 row mb-3 justify-content-center align-items-center"
+                        data-aos="fade-right" data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000"
+                        data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+                        <div class="col-md">
+                            <h1 class="h5 py-2 m-0 g-0">
+                                Bahasa Indonesia
+                            </h1>
+                        </div>
+                        <div class="eff col-md-5">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-label="indonesia" style="width: 90%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="english col-md-5 row mb-3 justify-content-center align-items-center"
+                        data-aos="fade-right" data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000"
+                        data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+                        <div class="col-md">
+                            <h1 class="h5 py-2 m-0 g-0">
+                                English
+                            </h1>
+                        </div>
+                        <div class="eff col-md-5">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-label="english" style="width: 70%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Content Skills End -->
+
+            <!-- Content Certificates Start -->
+            <div class="tiga justify-content-center align-items-center gap-5" id="certif">
+                <div class="title text-center mb-5" data-aos="fade" data-aos-offset="0" data-aos-delay="1000"
+                    data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+                    <h1>Certificate</h1>
+                </div>
+                <div class="row mb-5 justify-content-center align-items-center left">
+                    <div class="text-center" data-aos="fade" data-aos-offset="0" data-aos-delay="800"
+                        data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true"
+                        data-aos-once="false">
+                        <h1 class="h5 mb-3 fw-light">Competition</h1>
+                    </div>
+                    <div class="card col-md-4 bg-dark p-0 mx-2 g-0" style="width: 500px;" data-aos="fade-down"
+                        data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                        data-aos-mirror="true" data-aos-once="false">
+                        <img src="/assets/image/E-Certificate/E-SERTIFIKAT HACKATHON BPK 3022021-2.png"
+                            class="card-img-top" alt="hackaton">
+                        <div class="card-body">
+                            <p class="card-text text-center">
+                                Commemorate the 74th Anniversary of BPK RI
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card col-md-4 bg-dark p-0 mx-2 g-0" style="width: 500px;" data-aos="fade-down"
+                        data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                        data-aos-mirror="true" data-aos-once="false">
+                        <img src="/assets/image/E-Certificate/E-SERTIFIKAT HACKATHON BPK 3022021-2.png"
+                            class="card-img-top" alt="digitalsiswa">
+                        <div class="card-body">
+                            <p class="card-text text-center">
+                                Digital Siswa
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-5 justify-content-center align-items-center">
+                    <div class="text-center" data-aos="fade" data-aos-offset="0" data-aos-delay="800"
+                        data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true"
+                        data-aos-once="false">
+                        <h1 class="h5 mb-3 fw-light">Dicoding Course</h1>
+                    </div>
+                    <div class="card col-md-4 bg-dark p-0 mx-2 g-0" style="width: 500px;" data-aos="fade-down"
+                        data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                        data-aos-mirror="true" data-aos-once="false">
+                        <img src="/assets/image/E-Certificate/Dicoding Belajar Dasar Pemrograman Javascript.png"
+                            class="card-img-top" alt="python">
+                        <div class="card-body">
+                            <p class="card-text text-center">
+                                Memulai Pemrograman Dengan Python
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card col-md-4 bg-dark p-0 mx-2 g-0" style="width: 500px;" data-aos="fade-down"
+                        data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                        data-aos-mirror="true" data-aos-once="false">
+                        <img src="/assets/image/E-Certificate/AWS Dicoding Indonesia E-Certificate.PNG"
+                            class="card-img-top" alt="aws">
+                        <div class="card-body">
+                            <p class="card-text text-center">
+                                Cloud Practitioner Essentials (Belajar Dasar AWS Cloud)
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card col-md-4 bg-dark p-0 mx-2 g-0" style="width: 500px;" data-aos="fade-down"
+                        data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                        data-aos-mirror="true" data-aos-once="false">
+                        <img src="/assets/image/E-Certificate/Dicoding Belajar Dasar Pemrograman Javascript.png"
+                            class="card-img-top" alt="javascript">
+                        <div class="card-body">
+                            <p class="card-text text-center">
+                                Belajar Dasar Pemrograman Javascript
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-5 justify-content-center align-items-center">
+                    <div class="text-center" data-aos="fade" data-aos-offset="0" data-aos-delay="800"
+                        data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true"
+                        data-aos-once="false">
+                        <h1 class="h5 mb-3 fw-light">Progate Course</h1>
+                    </div>
+                    <div class="card col-md-4 bg-dark p-0 mx-2 g-0" style="width: 500px;" data-aos="fade-down"
+                        data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                        data-aos-mirror="true" data-aos-once="false">
+                        <img src="/assets/image/E-Certificate/Command Line Progate E-Certificate.png"
+                            class="card-img-top" alt="cmd">
+                        <div class="card-body">
+                            <p class="card-text text-center">
+                                Kursus Command Line
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card col-md-4 bg-dark p-0 mx-2 g-0" style="width: 500px;" data-aos="fade-down"
+                        data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                        data-aos-mirror="true" data-aos-once="false">
+                        <img src="/assets/image/E-Certificate/HTML&CSS Progate E-Certificate.png" class="card-img-top"
+                            alt="html">
+                        <div class="card-body">
+                            <p class="card-text text-center">
+                                Kursus HTML & CSS
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card col-md-4 bg-dark p-0 mx-2 g-0" style="width: 500px;" data-aos="fade-down"
+                        data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                        data-aos-mirror="true" data-aos-once="false">
+                        <img src="/assets/image/E-Certificate/JavaScript Progate E-Certificate.png" class="card-img-top"
+                            alt="cmd">
+                        <div class="card-body">
+                            <p class="card-text text-center">
+                                Kursus JavaScript
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-5 justify-content-center align-items-center">
+                    <div class="card col-md-4 bg-dark p-0 mx-2 g-0" style="width: 500px;" data-aos="fade-down"
+                        data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                        data-aos-mirror="true" data-aos-once="false">
+                        <img src="/assets/image/E-Certificate/SASS Progate E-Certificate.png" class="card-img-top"
+                            alt="sass">
+                        <div class="card-body">
+                            <p class="card-text text-center">
+                                Kursus SASS
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card col-md-4 bg-dark p-0 mx-2 g-0" style="width: 500px;" data-aos="fade-down"
+                        data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                        data-aos-mirror="true" data-aos-once="false">
+                        <img src="/assets/image/E-Certificate/Git Progate E-Certificate.png" class="card-img-top"
+                            alt="git">
+                        <div class="card-body">
+                            <p class="card-text text-center">
+                                Kursus Git
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card col-md-4 bg-dark p-0 mx-2 g-0" style="width: 500px;" data-aos="fade-down"
+                        data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                        data-aos-mirror="true" data-aos-once="false">
+                        <img src="/assets/image/E-Certificate/Python Progate E-Certificate.png" class="card-img-top"
+                            alt="python">
+                        <div class="card-body">
+                            <p class="card-text text-center">
+                                Kursus Python
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-5 justify-content-center align-items-center">
+                    <div class="card col-md-4 bg-dark p-0 mx-2 g-0" style="width: 500px;" data-aos="fade-down"
+                        data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                        data-aos-mirror="true" data-aos-once="false">
+                        <img src="/assets/image/E-Certificate/React Progate E-Certificate.png" class="card-img-top"
+                            alt="react">
+                        <div class="card-body">
+                            <p class="card-text text-center">
+                                Kursus React
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card col-md-4 bg-dark p-0 mx-2 g-0" style="width: 500px;" data-aos="fade-down"
+                        data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                        data-aos-mirror="true" data-aos-once="false">
+                        <img src="/assets/image/E-Certificate/PHP Progate E-Certificate.png" class="card-img-top"
+                            alt="php">
+                        <div class="card-body">
+                            <p class="card-text text-center">
+                                Kursus PHP
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card col-md-4 bg-dark p-0 mx-2 g-0" style="width: 500px;" data-aos="fade-down"
+                        data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                        data-aos-mirror="true" data-aos-once="false">
+                        <img src="/assets/image/E-Certificate/Ahmad Zaky Humami E-Certificate Progate.jpg"
+                            class="card-img-top" alt="python">
+                        <div class="card-body">
+                            <p class="card-text text-center">
+                                Pelatihan Coding secara Daring bersama Progate
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Content Certificates End -->
+
+            <!-- Content Resume Start -->
+            <div class="tiga justify-content-center align-items-center gap-5" id="resume">
+                <div class="title text-center mb-5" data-aos="fade" data-aos-offset="0" data-aos-delay="1000"
+                    data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+                    <h1>Resume</h1>
+                </div>
+                <div class="row mb-5 justify-content-around align-items-top">
+                    <div class="card col-md-5 glass bg-dark p-0 m-0 g-0" data-aos="fade-down" data-aos-offset="0"
+                        data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                        data-aos-mirror="true" data-aos-once="false">
+                        <img src="/assets/image/E-Certificate/CV_AhmadZakyHumami.png" class="card-img-top"
+                            alt="hackaton">
+                        <div class="card-body">
+                            <p class="card-text text-center">
+                                Resume as Software Developer
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="row">
+                            <div class="text-center" data-aos="fade" data-aos-offset="0" data-aos-delay="1000"
+                                data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true"
+                                data-aos-once="false">
+                                <h1 class="h5 mb-3 fw-light">Gallery</h1>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card bg-dark mb-1" style="width: 250px;" data-aos="fade-down"
+                                    data-aos-offset="0" data-aos-delay="200" data-aos-duration="1000"
+                                    data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+                                    <img src="/assets/image/img1.jpg" class="card-img gallery-item" alt="">
+                                </div>
+                                <div class="card bg-dark mb-1" style="width: 250px;" data-aos="fade-down"
+                                    data-aos-offset="0" data-aos-delay="300" data-aos-duration="1000"
+                                    data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+                                    <img src="/assets/image/img6.jpg" class="card-img gallery-item" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card bg-dark mb-1" style="width: 250px;" data-aos="fade-down"
+                                    data-aos-offset="0" data-aos-delay="400" data-aos-duration="1000"
+                                    data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+                                    <img src="/assets/image/img2.jpg" class="card-img gallery-item" alt="">
+                                </div>
+                                <div class="card bg-dark mb-1" style="width: 250px;" data-aos="fade-down"
+                                    data-aos-offset="0" data-aos-delay="500" data-aos-duration="1000"
+                                    data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+                                    <img src="/assets/image/img5.jpg" class="card-img gallery-item" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card bg-dark mb-1" style="width: 250px;" data-aos="fade-down"
+                                    data-aos-offset="0" data-aos-delay="600" data-aos-duration="1000"
+                                    data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+                                    <img src="/assets/image/img3.jpg" class="card-img gallery-item" alt="">
+                                </div>
+                                <div class="card bg-dark mb-1" style="width: 250px;" data-aos="fade-down"
+                                    data-aos-offset="0" data-aos-delay="700" data-aos-duration="1000"
+                                    data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+                                    <img src="/assets/image/img4.jpg" class="card-img gallery-item" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Content Resume End -->
+        </div>
         <!-- Content End -->
 
         <!-- footer -->
-        <div class="footer bg-black py-lg-5 py-sm-3 text-white">
+        <div class="footer glass-nav py-lg-5 py-5 text-white">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8">
-                        <h4>Ahmad Zaky Humami</h4>
+                        <h1 class="h4">Ahmad Zaky Humami</h1>
                         <p class="pt-2">08:00 - 17:00 WIB / (Senin - Jumat)</p>
-                        <i class="py-2 pe-2 fas fa-envelope-square me-2"></i> humami539@gmail.com
-                        <br>
-                        <i class="py-2 pe-2 fas fa-phone"></i> +62 851-5620-0870
-                        <br>
-                        <i class="py-2 pe-2 fas fa-map-marker-alt me-2"></i>
-                        Kel. Setia Asih, Kec. Tarumajaya, Kab. Bekasi, Bekasi Utara 17215
-                        <br><br>
+                        <p>
+                            <i class="fa-solid fa-envelope me-2"></i> humami539@gmail.com
+                        </p>
+                        <p>
+                            <i class="fa-brands fa-whatsapp me-2"></i>+62 851-5620-0870
+                        </p>
+                        <p>
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            Kel. Setia Asih, Kec. Tarumajaya, Kab. Bekasi, Bekasi Utara, Jawa Barat, Indonesia
+                        </p>
                     </div>
                     <div class="col-sm-4">
-                        <h4>Links</h4>
-                        <a href="https://www.facebook.com/zaky.humami/" target="_blank" class=" text-decoration-none h4"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/ahmadzkh_/" target="_blank" class=" text-decoration-none h4"><i class="fab fa-instagram"></i></a>
-                        <a href="https://twitter.com/ahmadzkh_" target="_blank" class=" text-decoration-none h4"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.youtube.com/channel/UCaVMwgQlmPGtXMt3vIwi3Cw" target="_blank" class=" text-decoration-none h4"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.linkedin.com/in/ahmad-zaky-418664224/" target="_blank" class=" text-decoration-none h4"><i class="fab fa-linkedin"></i></a>
+                        <h1 class="h4">Links</h1>
+                        <a href="https://www.facebook.com/zaky.humami/" target="_blank"
+                            class="text-decoration-none mx-1"><i class=" fa-2x fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/ahmadzkh_/" target="_blank"
+                            class="text-decoration-none mx-1"><i class=" fa-2x fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/ahmadzkh_" target="_blank" class="text-decoration-none mx-1"><i
+                                class=" fa-2x fab fa-twitter"></i></a>
+                        <a href="https://www.youtube.com/channel/UCaVMwgQlmPGtXMt3vIwi3Cw" target="_blank"
+                            class="text-decoration-none mx-1"><i class=" fa-2x fab fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/in/ahmadzkh/" target="_blank"
+                            class="text-decoration-none mx-1"><i class=" fa-2x fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="copyright py-lg-3 py-sm-3 text-white">
             <div class="container text-center">
-                Copyright &copy; 2023  ahmadzkh 
+                Copyright &copy; 2024 ahmadzkh
                 <br>
             </div>
         </div>
         <!-- end footer -->
     </main>
-    
+
+
+    <!-- SCRIPT -->
     <script src="assets/js/jquery-3.3.1.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
     <script src="assets/js/main.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>
 </body>
+
 </html>
