@@ -120,7 +120,7 @@ function Projects({ t }: { t: any }) {
           {t.projects.items.map((p: any, i: number) => (
             <SpotlightCard key={i} className="project-card" spotlightColor="rgba(0,229,255,0.15)">
               <a href={p.link} target="_blank" rel="noreferrer" className="card-link">
-                <img src={p.img.startsWith("http") ? p.img : `/images/projects/${p.img}.png`} alt={p.name} className="card-img" onError={(e) => { e.currentTarget.src = "/images/projects/landpage_pytricity.png"; }} />
+                <img src={p.img.startsWith("http") ? p.img : `/images/projects/${p.img}`} alt={p.name} className="card-img" onError={(e) => { e.currentTarget.src = "/images/projects/landpage_pytricity.png"; }} />
                 <div className="card-body">
                   <h3>{p.name}</h3>
                   <p>{p.desc}</p>
