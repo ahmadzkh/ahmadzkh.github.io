@@ -111,24 +111,29 @@ function About({ t }: { t: any }) {
   );
 }
 
-function Projects({ t }: { t: any }) {
+function Projects({ t, onLightbox }: { t: any; onLightbox: (src: string, alt: string) => void }) {
   return (
     <section id="projects" className="section">
       <div className="container">
         <h2 className="section-title">{t.projects.title}</h2>
         <div className="projects-grid">
-          {t.projects.items.map((p: any, i: number) => (
-            <SpotlightCard key={i} className="project-card" spotlightColor="rgba(0,229,255,0.15)">
-              <a href={p.link} target="_blank" rel="noreferrer" className="card-link">
-                <img src={p.img.startsWith("http") ? p.img : `/images/projects/${p.img}`} alt={p.name} className="card-img" onError={(e) => { e.currentTarget.src = "/images/projects/landpage_pytricity.png"; }} />
-                <div className="card-body">
-                  <h3>{p.name}</h3>
-                  <p>{p.desc}</p>
-                  <div className="project-tags">{p.tags.map((tag: string, j: number) => <span key={j} className="tag">{tag}</span>)}</div>
+          {t.projects.items.map((p: any, i: number) => {
+            const imgSrc = p.img.startsWith("http") ? p.img : `/images/projects/${p.img}`;
+            const isLive = p.link && p.link !== "#";
+            return (
+              <SpotlightCard key={i} className="project-card" spotlightColor="rgba(0,229,255,0.15)">
+                <div className="card-inner">
+                  <img src={imgSrc} alt={p.name} className="card-img" onClick={() => onLightbox(imgSrc, p.name)} role="button" title="View full image" onError={(e) => { e.currentTarget.src = "/images/projects/landpage_pytricity.png"; }} />
+                  <div className="card-body">
+                    <h3>{p.name}</h3>
+                    <p>{p.desc}</p>
+                    <div className="project-tags">{p.tags.map((tag: string, j: number) => <span key={j} className="tag">{tag}</span>)}</div>
+                    {isLive && <a href={p.link} target="_blank" rel="noreferrer" className="project-link">View Live →</a>}
+                  </div>
                 </div>
-              </a>
-            </SpotlightCard>
-          ))}
+              </SpotlightCard>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -224,20 +229,41 @@ function Footer({ t }: { t: any }) {
   );
 }
 
+function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => { window.removeEventListener("keydown", onKey); document.body.style.overflow = ""; };
+  }, [onClose]);
+
+  return (
+    <div className="lightbox" onClick={onClose}>
+      <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+        <button className="lightbox-close" onClick={onClose} aria-label="Close">×</button>
+        <img src={src} alt={alt} />
+        <p>{alt}</p>
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
   const { lang, setLang, t } = useLang();
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
   return (
     <>
       <Navbar lang={lang} setLang={setLang} t={t} />
       <main>
         <Hero t={t} />
         <About t={t} />
-        <Projects t={t} />
+        <Projects t={t} onLightbox={(src, alt) => setLightbox({ src, alt })} />
         <Skills t={t} />
         <Certificates t={t} />
         <Contact t={t} />
       </main>
       <Footer t={t} />
+      {lightbox && <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
     </>
   );
 }
