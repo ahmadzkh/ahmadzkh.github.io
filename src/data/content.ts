@@ -113,6 +113,8 @@ export const content = {
         {
           name: "Web Development",
           items: [
+            { name: "Web Development", level: 95 },
+            { name: "Backend Development", level: 90 },
             { name: "PHP / Laravel", level: 95 },
             { name: "JavaScript", level: 88 },
             { name: "Tailwind CSS", level: 90 },
@@ -289,6 +291,8 @@ export const content = {
         {
           name: "Web Development",
           items: [
+            { name: "Web Development", level: 95 },
+            { name: "Backend Development", level: 90 },
             { name: "PHP / Laravel", level: 95 },
             { name: "JavaScript", level: 88 },
             { name: "Tailwind CSS", level: 90 },
