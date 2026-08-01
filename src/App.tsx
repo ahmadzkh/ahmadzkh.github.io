@@ -66,7 +66,7 @@ function Hero({ t }: { t: any }) {
         <p className="hero-tagline">{t.hero.tagline}</p>
         <div className="hero-cta">
           <a href="#projects" className="btn-primary">{t.hero.cta} <ArrowRight size={16} /></a>
-          <a href="/images/CV_AhmadZakyHumami.png" download className="btn-outline"><Download size={16} /> {t.hero.resume}</a>
+          <a href="./images/CV_AhmadZakyHumami.pdf" download className="btn-outline"><Download size={16} /> {t.hero.resume}</a>
         </div>
       </div>
     </section>
