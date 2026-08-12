@@ -36,11 +36,11 @@ export const content = {
       title: "Featured Projects",
       items: [
         {
-          name: "HRIS LepKOM",
+          name: "HRIS LepKom",
           desc: "A comprehensive Human Resource Information System with recruitment, scheduling, assessment, and file management.",
           tags: ["React", "TypeScript", "Express", "MongoDB", "Tailwind", "Supabase"],
           img: "hris-lepkom.jpg",
-          link: "#",
+          link: "https://hris-lepkom-frontend.vercel.app/",
         },
         {
           name: "SentiRank",
@@ -214,11 +214,11 @@ export const content = {
       title: "Proyek Unggulan",
       items: [
         {
-          name: "HRIS LepKOM",
+          name: "HRIS LepKom",
           desc: "Sistem Informasi Sumber Daya Manusia komprehensif dengan rekrutmen, penjadwalan, penilaian, dan pengelolaan berkas.",
           tags: ["React", "TypeScript", "Express", "MongoDB", "Tailwind", "Supabase"],
           img: "hris-lepkom.jpg",
-          link: "#",
+          link: "https://hris-lepkom-frontend.vercel.app/",
         },
         {
           name: "SentiRank",
